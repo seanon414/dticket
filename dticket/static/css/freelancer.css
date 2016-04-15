@@ -68,8 +68,8 @@ header {
   color: white;
 }
 header .container {
-  padding-top: 100px;
-  padding-bottom: 50px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 header img {
   display: block;
@@ -88,8 +88,8 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   header .container {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
   header .intro-text .name {
     font-size: 4.75em;
@@ -99,6 +99,12 @@ header .intro-text .skills {
   }
 }
 @media (min-width: 768px) {
+  .navbar {
+    min-height: 30px;
+  }
+  .navbar-default .navbar-nav > li > a {
+    padding: 5px 10px;
+  }
   .navbar-fixed-top {
     padding: 10px 0;
     -webkit-transition: padding 0.3s;
@@ -106,7 +112,7 @@ header .intro-text .skills {
     transition: padding 0.3s;
   }
   .navbar-fixed-top .navbar-brand {
-    font-size: 2em;
+    font-size: 1.2em;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
@@ -122,6 +128,10 @@ header .intro-text .skills {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
+}
+.navbar .navbar-brand {
+  height: 30px;
+  padding: 5px 5px;
 }
 .navbar a:focus {
   outline: none;
@@ -157,10 +167,10 @@ section.success a.active {
 }
 @media (max-width: 767px) {
   section {
-    padding: 75px 0;
+    padding: 20px 0;
   }
   section.first {
-    padding-top: 75px;
+    padding-top: 20px;
   }
 }
 #portfolio .portfolio-item {
@@ -386,15 +396,26 @@ footer .footer-below {
   display: none;
 }
 /* Overrides for DT */
+@media (min-width: 992px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    margin-left: 0;
+  }
+}
 .navbar-default {
   background: #132530;
 }
 .container .counter {
   margin: 10px auto;
-  width: 50%;
+  width: 30%;
   background-color: black;
   border: 5px solid #fff;
-  min-width: 400px;
+  min-width: 300px;
   height: 200px;
   color: #fff;
   line-height: 190px;
@@ -403,4 +424,43 @@ footer .footer-below {
 }
 .container .btn-actions {
   margin-top: 20px;
+}
+.container .btn-success:focus,
+.container .btn-success.focus {
+  background-color: #18bc9c;
+  border-color: #18bc9c;
+}
+hr.ticket-icon,
+hr.ticket-primary {
+  padding: 0;
+  border: none;
+  border-top: solid 5px;
+  text-align: center;
+  max-width: 250px;
+  margin: 25px auto 30px;
+}
+hr.ticket-icon:after,
+hr.ticket-primary:after {
+  content: "\f145";
+  font-family: FontAwesome;
+  display: inline-block;
+  position: relative;
+  top: -0.8em;
+  font-size: 2em;
+  padding: 0 0.25em;
+}
+hr.ticket-icon {
+  border-color: white;
+}
+hr.ticket-icon:after {
+  color: white;
+  background-color: #0064a4;
+}
+hr.ticket-primary {
+  background-color: white;
+  border-color: #0064a4;
+}
+hr.ticket-primary:after {
+  background-color: white;
+  color: #0064a4;
 }

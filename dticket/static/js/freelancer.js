@@ -35,3 +35,27 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+//Pause makes counter blink, Resume to remove
+$("[name='button_pause']").on("click", function () {
+    $(".serve_number").addClass("blink");
+    setInterval(function () {
+        $(".blink").fadeOut(500);
+        $(".blink").fadeIn(500);
+    }, 1000);
+    $(this).text("Resume");
+    $(this).attr("name", "button_resume");
+
+    $("[name='button_resume']").on("click", function () {
+        $(".serve_number").removeClass("blink");
+        $(this).text("Pause");
+        $(this).attr("name", "button_pause");
+    });
+});
+
+// Next increments counter
+$("[name='button_next']").on("click", function () {
+    var counter = Number($(".serve_number").text());
+    counter ++;
+    $(".serve_number").text(counter);
+})
