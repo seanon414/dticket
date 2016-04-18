@@ -447,13 +447,16 @@ footer {
 /* Overrides for DT */
 
 @media (min-width: 992px) {
-	.container {
+	.container-fluid {
 	    width: 100%;
 	}
 }
 
 @media (min-width: 768px) {
-	.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+	.navbar-fixed-top {
+		padding:5px 0;
+	}
+	.navbar>.container-fluid .navbar-brand {
 	    margin-left: 0;
 	}
 }
@@ -461,26 +464,42 @@ footer {
 	background: @primaryDark;
 }
 
-.container {
-	.counter {
-		margin: 10px auto;
-		width:30%;
-		background-color:black;
-		border: 5px solid #fff;
-		min-width:300px;
-		height:200px;
-		color: #fff;
-		line-height: 190px;
-		font-size: 150px;
-		color: firebrick;
-	}
-	.btn-actions {
-		margin-top: 20px;
-	}
+header {
+	background-color: @primary;
+	.container-fluid {
+		padding-top: 30px;
 
-	.btn-success:focus, .btn-success.focus {
-		background-color: #18bc9c;
-		border-color: #18bc9c;
+		.counter {
+			background-color:black;
+			border: 5px solid #fff;
+			min-width:300px;
+			height:200px;
+			color: #fff;
+			line-height: 190px;
+			font-size: 150px;
+			color: firebrick;
+		}
+
+		.btn-group-vertical {
+			margin-top: 30px;
+			&.left-panel {
+				margin-right: -60px;
+			}
+			&.right-panel {
+				margin-left: -60px;
+			}
+		}
+		.btn {
+			margin-bottom:3px;
+			max-width: 108px;
+		}
+
+/*		.btn-success {
+			border-bottom: 1px solid darken(#18bc9c, 20%);
+		}
+		.btn-success:focus, .btn-success.focus {
+			background-color: #18bc9c;
+		}*/
 	}
 }
 

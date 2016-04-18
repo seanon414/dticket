@@ -37,25 +37,61 @@ $('.navbar-collapse ul li a').click(function() {
 });
 
 //Pause makes counter blink, Resume to remove
-$("[name='button_pause']").on("click", function () {
-    $(".serve_number").addClass("blink");
-    setInterval(function () {
-        $(".blink").fadeOut(500);
-        $(".blink").fadeIn(500);
-    }, 1000);
-    $(this).text("Resume");
-    $(this).attr("name", "button_resume");
+(function ($) {
+    "use strict";
 
-    $("[name='button_resume']").on("click", function () {
-        $(".serve_number").removeClass("blink");
-        $(this).text("Pause");
-        $(this).attr("name", "button_pause");
-    });
-});
+    /*global window */
+
+    var dt_ticket = {
+        init: function () {
+            this.increment_counter();
+            this.decrement_counter();
+            this.pause_counter();
+            this.resume_counter();
+        },
+
+        pause_counter: function () {
+            var self = this;
+            $("[name='button_pause']").on("click", function () {
+                $(".serve_number").addClass("blink");
+                setInterval(function () {
+                    $(".blink").fadeOut(500);
+                    $(".blink").fadeIn(500);
+                }, 1000);
+                $(this).text("Resume");
+                $(this).attr("name", "button_resume");
+                self.resume_counter();
+            });
+        },
+
+        resume_counter: function () {
+            var self = this;
+            $("[name='button_resume']").on("click", function () {
+                $(".serve_number").removeClass("blink");
+                $(this).text("Pause");
+                $(this).attr("name", "button_pause");
+                self.pause_counter();
+            });
+        },
 
 // Next increments counter
-$("[name='button_next']").on("click", function () {
-    var counter = Number($(".serve_number").text());
-    counter ++;
-    $(".serve_number").text(counter);
-})
+        increment_counter: function () {
+            $("[name='button_next']").on("click", function () {
+                var counter = Number($(".serve_number").text());
+                counter ++;
+                $(".serve_number").text(counter);
+            })
+        },
+
+        decrement_counter: function () {
+            $("[name='button_back']").on("click", function () {
+                var counter = Number($(".serve_number").text());
+                counter --;
+                $(".serve_number").text(counter);
+            })
+        }
+
+    };
+
+    dt_ticket.init();
+}(window.jQuery));
