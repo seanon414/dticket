@@ -447,6 +447,16 @@ header .container-fluid .btn {
   margin-bottom: 3px;
   max-width: 108px;
 }
+#page-top section {
+  padding: 50px 0;
+}
+#page-top section .form-control {
+  height: 20px;
+}
+#page-top section .floating-label-form-group input {
+  font-size: 1em;
+  padding: 0;
+}
 hr.ticket-icon,
 hr.ticket-primary {
   padding: 0;
@@ -476,8 +486,11 @@ hr.ticket-icon:after {
 hr.ticket-primary {
   background-color: white;
   border-color: #0064a4;
+  margin: 10px auto 20px;
 }
 hr.ticket-primary:after {
   background-color: white;
   color: #0064a4;
+  font-size: 1.5em;
+  padding: 0 5px;
 }
