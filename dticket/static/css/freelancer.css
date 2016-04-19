@@ -447,6 +447,9 @@ header .container-fluid .btn {
   margin-bottom: 3px;
   max-width: 108px;
 }
+header .container-fluid .intro-text .skills {
+  font-size: 1.5em;
+}
 #page-top section {
   padding: 50px 0;
 }
@@ -478,10 +481,13 @@ hr.ticket-primary:after {
 }
 hr.ticket-icon {
   border-color: white;
+  margin: 15px auto 5px;
 }
 hr.ticket-icon:after {
   color: white;
   background-color: #0064a4;
+  font-size: 1.5em;
+  padding: 0 5px;
 }
 hr.ticket-primary {
   background-color: white;
