@@ -8,9 +8,11 @@ class HomePageForm(forms.Form):
                                  min_value=0,
                                  widget=forms.HiddenInput())
 
-    ticket_id = CharField(required=False)
+    ticket_id = CharField(required=False,
+                          widget=forms.TextInput(attrs={"placeholder": "Ticket Number"}))
 
-    slack_username = CharField(required=False)
+    slack_username = CharField(required=False,
+                               widget=forms.TextInput(attrs={"placeholder": "Slack ID"}))
 
     def __init__(self, *args, **kwargs):
         super(HomePageForm, self).__init__(*args, **kwargs)
