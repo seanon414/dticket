@@ -15,18 +15,19 @@
                 e.preventDefault();
                 self.increment_counter();
                 self.set_counter();
+                $(this).closest("form").submit();
             });
 
             $("[name='button_back']").on("click", function (e) {
                 e.preventDefault();
                 self.decrement_counter();
                 self.set_counter();
+                $(this).closest("form").submit();
             });
         },
 
         set_counter: function () {
             $(".serve_number").text($("#id_ticket_number").val());
-            $(this).closest("form").submit();
         },
 
         pause_counter: function () {
