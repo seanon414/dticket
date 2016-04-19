@@ -584,3 +584,6 @@ div#waitTimeModal .modal-body {
 div#waitTimeModal .ticket-primary {
   max-width: 100%;
 }
+#stats img {
+  width: 100%;
+}
