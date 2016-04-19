@@ -105,24 +105,27 @@ header .intro-text .skills {
   .navbar-default .navbar-nav > li > a {
     padding: 5px 10px;
   }
-  .navbar-fixed-top {
-    padding: 10px 0;
-    -webkit-transition: padding 0.3s;
-    -moz-transition: padding 0.3s;
-    transition: padding 0.3s;
-  }
-  .navbar-fixed-top .navbar-brand {
-    font-size: 1.2em;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .navbar-fixed-top.navbar-shrink {
-    padding: 10px 0;
-  }
-  .navbar-fixed-top.navbar-shrink .navbar-brand {
-    font-size: 1.5em;
-  }
+  /*
+    .navbar-fixed-top {
+        padding: 10px 0;
+        -webkit-transition: padding 0.3s;
+        -moz-transition: padding 0.3s;
+        transition: padding 0.3s;
+	    .navbar-brand {
+	        font-size: 1.2em;
+	        -webkit-transition: all 0.3s;
+	        -moz-transition: all 0.3s;
+	        transition: all 0.3s;
+	    }
+    }
+
+    .navbar-fixed-top.navbar-shrink {
+        padding: 10px 0;
+		.navbar-brand {
+	        font-size: 1.5em;
+	    }
+	}
+	*/
 }
 .navbar {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -503,4 +506,7 @@ hr.ticket-primary:after {
 #page-top section .floating-label-form-group input {
   font-size: 1.5em;
   outline: none;
+}
+#page-top section .submit-button {
+  text-align: center;
 }
