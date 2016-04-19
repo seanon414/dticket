@@ -41,4 +41,4 @@ class HomePageView(FormView):
 
     def slack_ticket_called(self, user_name, ticket_id):
         slack_string = '@{}! Your ticket, {}, has been called.'.format(user_name, ticket_id)
-        slack.chat.post_message('#d-ticket-hack', slack_string) 
+        slack.chat.post_message('#d-ticket-hack', slack_string)
