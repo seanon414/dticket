@@ -53,23 +53,23 @@
                         <a class="navbar-brand" href="#page-top">D-Ticket</a>
                     </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        <li class="page-scroll">
-                            <a href="#slackme">Slack Me</a>
-                        </li>
-                    </ul>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="hidden">
+                                <a href="#page-top"></a>
+                            </li>
+                            <li class="page-scroll">
+                                <a href="#slackme">Slack Me</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+            <!-- /.container-fluid -->
+        </nav>
 
     <!-- Header -->
     <header>
@@ -95,11 +95,12 @@
                 <div class="col-xs-2">
                     <div class="btn-actions btn-group-vertical right-panel">
                         <button class="btn btn-success btn-lg" name="button_back">Back</button>
-                        <button class="btn btn-success btn-lg" name="button_next">Next</button>
+                        <button type="submit" class="btn btn-success btn-lg" name="button_next">Next</button>
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
         <!-- Slack Me Section -->
         <section id="slackme">
@@ -118,7 +119,6 @@
                                     <div class="form-group col-xs-12 floating-label-form-group controls">
                                         <label>Ticket Number</label>
                                         {{ form.ticket_id }}
-                                        <!-- <input type="text" class="form-control" placeholder="Ticket Number" id="ticketno"> -->
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
@@ -126,7 +126,6 @@
                                     <div class="form-group col-xs-12 floating-label-form-group controls">
                                         <label>Slack ID</label>
                                         {{ form.slack_username }}
-                                        <!-- <input type="slackid" class="form-control" placeholder="Slack ID" id="slackid"> -->
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
