@@ -25,7 +25,7 @@ class HomePageView(FormView):
             if 'button_slack' in form.data:
                 self.slack_initial_message(slack_username, ticket_id)
                 self.save_slack_me(slack_username, ticket_id)
-            elif 'button_next' in form.data:
+            else:
                 self.slack_ticket_called(ticket_number)
             return self.form_valid(form, **kwargs)
         else:
@@ -53,9 +53,12 @@ class HomePageView(FormView):
         slack.chat.post_message('#d-ticket-hack', slack_string)
 
     def slack_ticket_called(self, ticket_id):
-        slack_me = SlackMe.objects.get(ticket_id=ticket_id)
-        slack_string = '@{}! Your ticket, {}, has been called.'.format(user_name, ticket_id)
-        slack.chat.post_message('#d-ticket-hack', slack_string)
+        try:
+            slack_me = SlackMe.objects.get(ticket_id=ticket_id)
+            slack_string = '@{}! Your ticket, {}, has been called.'.format(slack_me.slack_username, ticket_id)
+            slack.chat.post_message('#d-ticket-hack', slack_string)
+        except Exception:
+            pass
 
     def save_slack_me(self, user_name, ticket_id):
         slack_me = SlackMe.objects.create(slack_username=user_name, ticket_id=ticket_id)
