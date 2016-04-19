@@ -7,6 +7,7 @@ from db.models import TicketCounter, SlackMe
 from slacker import Slacker
 
 slack = Slacker('xoxb-35700221924-XjG9qR4swYgOf4uEIWy1F7JG')
+channel = '#d-ticket'
 
 
 class HomePageView(FormView):
@@ -50,13 +51,13 @@ class HomePageView(FormView):
 
     def slack_initial_message(self, user_name, ticket_id):
         slack_string = 'Hello @{}! We will notify you when your ticket, {}, is called.'.format(user_name, ticket_id)
-        slack.chat.post_message('#d-ticket-hack', slack_string)
+        slack.chat.post_message(channel, slack_string)
 
     def slack_ticket_called(self, ticket_id):
         try:
             slack_me = SlackMe.objects.get(ticket_id=ticket_id)
             slack_string = '@{}! Your ticket, {}, has been called.'.format(slack_me.slack_username, ticket_id)
-            slack.chat.post_message('#d-ticket-hack', slack_string)
+            slack.chat.post_message(channel, slack_string)
         except Exception:
             pass
 
