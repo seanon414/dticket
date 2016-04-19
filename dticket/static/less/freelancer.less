@@ -76,8 +76,8 @@ header {
 	background: @primary;
 	color: white;
 	.container {
-		padding-top: 40px;
-		padding-bottom: 40px;
+		padding-top: 100px;
+		padding-bottom: 50px;
 	}
 	img {
 		display: block;
@@ -101,8 +101,8 @@ header {
 @media(min-width:768px) {
 	header {
 		.container {
-			padding-top: 40px;
-			padding-bottom: 40px;
+			padding-top: 100px;
+			padding-bottom: 100px;
 		}
 		.intro-text {
 			.name {
@@ -116,44 +116,30 @@ header {
 }
 
 @media(min-width:768px) {
-	.navbar {
-		min-height: 30px;
-	}
-	.navbar-default .navbar-nav > li > a {
-		padding: 5px 10px;
-	}
-	/*
     .navbar-fixed-top {
         padding: 10px 0;
         -webkit-transition: padding 0.3s;
         -moz-transition: padding 0.3s;
         transition: padding 0.3s;
 	    .navbar-brand {
-	        font-size: 1.2em;
+	        font-size: 2em;
 	        -webkit-transition: all 0.3s;
 	        -moz-transition: all 0.3s;
 	        transition: all 0.3s;
 	    }
     }
-
     .navbar-fixed-top.navbar-shrink {
         padding: 10px 0;
 		.navbar-brand {
 	        font-size: 1.5em;
 	    }
 	}
-	*/
 }
 
 .navbar {
 	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
-
-	.navbar-brand {
-		height: 30px;
-		padding: 5px 5px;
-	}
 	a:focus {
 		outline: none;
 	}
@@ -196,10 +182,10 @@ section.success {
 
 @media(max-width:767px) {
 	section {
-		padding: 20px 0;
+		padding: 75px 0;
 	}
 	section.first {
-		padding-top: 20px;
+		padding-top: 75px;
 	}
 }
 
@@ -448,14 +434,84 @@ footer {
 }
 
 /* Overrides for DT */
+.navbar-default {
+	background: @primaryDark;
+}
 
-@media (min-width: 992px) {
-	.container-fluid {
-	    width: 100%;
+hr.ticket-icon:after,
+hr.ticket-primary:after {
+	content: "\f145";
+	font-family: FontAwesome;
+	display: inline-block;
+	position: relative;
+	top: -0.8em;
+	font-size: 2em;
+	padding: 0 0.25em;
+}
+hr.ticket-icon,
+hr.ticket-primary {
+    padding: 0;
+    border: none;
+    border-top: solid 5px;
+    text-align: center;
+    max-width: 250px;
+    margin: 25px auto 30px;
+}
+
+hr.ticket-icon {
+    border-color: white;
+}
+
+hr.ticket-icon:after {
+	color: white;
+	background-color: @primary;
+}
+
+hr.ticket-primary {
+	background-color: white;
+	border-color: @primary;
+}
+
+hr.ticket-primary:after {
+	background-color: white;
+	color: @primary;
+}
+.container {
+	.counter {
+		margin: 10px auto;
+		width:50%;
+		background-color:black;
+		border: 5px solid #fff;
+		min-width:400px;
+		height:200px;
+		color: #fff;
+		line-height: 190px;
+		font-size: 150px;
+		color: firebrick;
+	}
+	.btn-actions {
+		margin-top: 20px;
 	}
 }
 
-@media (min-width: 768px) {
+/* Overrides for DT */
+
+@media (min-width: 920px) {
+	header {
+		padding-bottom: 20px;
+
+		.container-fluid {
+		    width: 100%;
+
+			h3 {
+			    margin-top: 80px;
+			    padding: 20px 0;
+			}
+		}
+	}
+}
+
+@media (min-width: 920px) {
 	.navbar-fixed-top {
 		padding:5px 0;
 	}
@@ -467,11 +523,86 @@ footer {
 	background: @primaryDark;
 }
 
+@media (max-width: 920px) {
+	.navbar-fixed-top {
+		max-height: 20px;
+
+		.navbar-brand {
+			font-size: 1.5em;
+			height: 20px;
+			margin-left: 0;
+			padding: 0 10px;
+		}
+	}
+	.navbar-nav>li>a {
+		padding: 0 10px;
+	}
+	.navbar {
+		min-height: 40px;
+	}
+	header {
+		.container {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+		.container-fluid {
+			padding-top: 30px;
+		}
+	}
+	hr.ticket-icon,
+	hr.ticket-primary {
+	    padding: 0;
+	    border: none;
+	    border-top: solid 5px;
+	    text-align: center;
+	    max-width: 250px;
+	    margin: 25px auto 30px;
+	}
+
+	hr.ticket-icon:after,
+	hr.ticket-primary:after {
+	    display: inline-block;
+	    position: relative;
+	    top: -0.8em;
+	    font-size: 2em;
+	    padding: 0 0.25em;
+	}
+
+	hr.ticket-icon {
+		margin: 15px auto 5px;
+	}
+
+	hr.ticket-icon:after {
+		font-size: 1.5em;
+		padding: 0 5px;
+	}
+
+	hr.ticket-primary {
+		margin: 10px auto 20px;
+	}
+
+	hr.ticket-primary:after {
+		font-size: 1.5em;
+		padding: 0 5px;
+	}
+
+
+	#page-top section {
+		padding: 50px 0;
+		.form-control {
+			height: 20px;
+		}
+		.floating-label-form-group input {
+			font-size: 1em;
+			padding: 0;
+		}
+	}
+}
+
 header {
 	background-color: @primary;
 
 	.container-fluid {
-		padding-top: 30px;
 
 		.counter {
 			background-color:black;
@@ -510,62 +641,8 @@ header {
 		}*/
 	}
 }
-#page-top section {
-	padding: 50px 0;
-	.form-control {
-		height: 20px;
-	}
-	.floating-label-form-group input {
-		font-size: 1em;
-		padding: 0;
-	}
-}
 
-hr.ticket-icon,
-hr.ticket-primary {
-    padding: 0;
-    border: none;
-    border-top: solid 5px;
-    text-align: center;
-    max-width: 250px;
-    margin: 25px auto 30px;
-}
 
-hr.ticket-icon:after,
-hr.ticket-primary:after {
-    content: "\f145";
-    font-family: FontAwesome;
-    display: inline-block;
-    position: relative;
-    top: -0.8em;
-    font-size: 2em;
-    padding: 0 0.25em;
-}
-
-hr.ticket-icon {
-    border-color: white;
-	margin: 15px auto 5px;
-}
-
-hr.ticket-icon:after {
-    color: white;
-	background-color: @primary;
-	font-size: 1.5em;
-	padding: 0 5px;
-}
-
-hr.ticket-primary {
-	background-color: white;
-    border-color: @primary;
-	margin: 10px auto 20px;
-}
-
-hr.ticket-primary:after {
-    background-color: white;
-    color: @primary;
-	font-size: 1.5em;
-	padding: 0 5px;
-}
 
 #page-top section {
 	.floating-label-form-group input {
@@ -573,6 +650,21 @@ hr.ticket-primary:after {
 		outline: none;
 	}
 	.submit-button {
+		padding: 20px;
 		text-align: center;
+	}
+}
+
+div#waitTimeModal {
+    top: 10%;
+    left: 10%;
+    width: 75%;
+
+	.modal-body {
+		width:80%;
+		text-align: center;
+	}
+	.ticket-primary {
+		max-width: 100%;
 	}
 }

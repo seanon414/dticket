@@ -68,8 +68,8 @@ header {
   color: white;
 }
 header .container {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 header img {
   display: block;
@@ -88,8 +88,8 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   header .container {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
   header .intro-text .name {
     font-size: 4.75em;
@@ -99,42 +99,29 @@ header .intro-text .skills {
   }
 }
 @media (min-width: 768px) {
-  .navbar {
-    min-height: 30px;
+  .navbar-fixed-top {
+    padding: 10px 0;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
   }
-  .navbar-default .navbar-nav > li > a {
-    padding: 5px 10px;
+  .navbar-fixed-top .navbar-brand {
+    font-size: 2em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
   }
-  /*
-    .navbar-fixed-top {
-        padding: 10px 0;
-        -webkit-transition: padding 0.3s;
-        -moz-transition: padding 0.3s;
-        transition: padding 0.3s;
-	    .navbar-brand {
-	        font-size: 1.2em;
-	        -webkit-transition: all 0.3s;
-	        -moz-transition: all 0.3s;
-	        transition: all 0.3s;
-	    }
-    }
-
-    .navbar-fixed-top.navbar-shrink {
-        padding: 10px 0;
-		.navbar-brand {
-	        font-size: 1.5em;
-	    }
-	}
-	*/
+  .navbar-fixed-top.navbar-shrink {
+    padding: 10px 0;
+  }
+  .navbar-fixed-top.navbar-shrink .navbar-brand {
+    font-size: 1.5em;
+  }
 }
 .navbar {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-}
-.navbar .navbar-brand {
-  height: 30px;
-  padding: 5px 5px;
 }
 .navbar a:focus {
   outline: none;
@@ -170,10 +157,10 @@ section.success a.active {
 }
 @media (max-width: 767px) {
   section {
-    padding: 20px 0;
+    padding: 75px 0;
   }
   section.first {
-    padding-top: 20px;
+    padding-top: 75px;
   }
 }
 #portfolio .portfolio-item {
@@ -399,12 +386,72 @@ footer .footer-below {
   display: none;
 }
 /* Overrides for DT */
-@media (min-width: 992px) {
-  .container-fluid {
+.navbar-default {
+  background: #132530;
+}
+hr.ticket-icon:after,
+hr.ticket-primary:after {
+  content: "\f145";
+  font-family: FontAwesome;
+  display: inline-block;
+  position: relative;
+  top: -0.8em;
+  font-size: 2em;
+  padding: 0 0.25em;
+}
+hr.ticket-icon,
+hr.ticket-primary {
+  padding: 0;
+  border: none;
+  border-top: solid 5px;
+  text-align: center;
+  max-width: 250px;
+  margin: 25px auto 30px;
+}
+hr.ticket-icon {
+  border-color: white;
+}
+hr.ticket-icon:after {
+  color: white;
+  background-color: #0064a4;
+}
+hr.ticket-primary {
+  background-color: white;
+  border-color: #0064a4;
+}
+hr.ticket-primary:after {
+  background-color: white;
+  color: #0064a4;
+}
+.container .counter {
+  margin: 10px auto;
+  width: 50%;
+  background-color: black;
+  border: 5px solid #fff;
+  min-width: 400px;
+  height: 200px;
+  color: #fff;
+  line-height: 190px;
+  font-size: 150px;
+  color: firebrick;
+}
+.container .btn-actions {
+  margin-top: 20px;
+}
+/* Overrides for DT */
+@media (min-width: 920px) {
+  header {
+    padding-bottom: 20px;
+  }
+  header .container-fluid {
     width: 100%;
   }
+  header .container-fluid h3 {
+    margin-top: 80px;
+    padding: 20px 0;
+  }
 }
-@media (min-width: 768px) {
+@media (min-width: 920px) {
   .navbar-fixed-top {
     padding: 5px 0;
   }
@@ -415,11 +462,75 @@ footer .footer-below {
 .navbar-default {
   background: #132530;
 }
+@media (max-width: 920px) {
+  .navbar-fixed-top {
+    max-height: 20px;
+  }
+  .navbar-fixed-top .navbar-brand {
+    font-size: 1.5em;
+    height: 20px;
+    margin-left: 0;
+    padding: 0 10px;
+  }
+  .navbar-nav > li > a {
+    padding: 0 10px;
+  }
+  .navbar {
+    min-height: 40px;
+  }
+  header .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  header .container-fluid {
+    padding-top: 30px;
+  }
+  hr.ticket-icon,
+  hr.ticket-primary {
+    padding: 0;
+    border: none;
+    border-top: solid 5px;
+    text-align: center;
+    max-width: 250px;
+    margin: 25px auto 30px;
+  }
+  hr.ticket-icon:after,
+  hr.ticket-primary:after {
+    display: inline-block;
+    position: relative;
+    top: -0.8em;
+    font-size: 2em;
+    padding: 0 0.25em;
+  }
+  hr.ticket-icon {
+    margin: 15px auto 5px;
+  }
+  hr.ticket-icon:after {
+    font-size: 1.5em;
+    padding: 0 5px;
+  }
+  hr.ticket-primary {
+    margin: 10px auto 20px;
+  }
+  hr.ticket-primary:after {
+    font-size: 1.5em;
+    padding: 0 5px;
+  }
+  #page-top section {
+    padding: 50px 0;
+  }
+  #page-top section .form-control {
+    height: 20px;
+  }
+  #page-top section .floating-label-form-group input {
+    font-size: 1em;
+    padding: 0;
+  }
+}
 header {
   background-color: #0064a4;
 }
 header .container-fluid {
-  padding-top: 30px;
   /*		.btn-success {
 			border-bottom: 1px solid darken(#18bc9c, 20%);
 		}
@@ -453,60 +564,23 @@ header .container-fluid .btn {
 header .container-fluid .intro-text .skills {
   font-size: 1.5em;
 }
-#page-top section {
-  padding: 50px 0;
-}
-#page-top section .form-control {
-  height: 20px;
-}
-#page-top section .floating-label-form-group input {
-  font-size: 1em;
-  padding: 0;
-}
-hr.ticket-icon,
-hr.ticket-primary {
-  padding: 0;
-  border: none;
-  border-top: solid 5px;
-  text-align: center;
-  max-width: 250px;
-  margin: 25px auto 30px;
-}
-hr.ticket-icon:after,
-hr.ticket-primary:after {
-  content: "\f145";
-  font-family: FontAwesome;
-  display: inline-block;
-  position: relative;
-  top: -0.8em;
-  font-size: 2em;
-  padding: 0 0.25em;
-}
-hr.ticket-icon {
-  border-color: white;
-  margin: 15px auto 5px;
-}
-hr.ticket-icon:after {
-  color: white;
-  background-color: #0064a4;
-  font-size: 1.5em;
-  padding: 0 5px;
-}
-hr.ticket-primary {
-  background-color: white;
-  border-color: #0064a4;
-  margin: 10px auto 20px;
-}
-hr.ticket-primary:after {
-  background-color: white;
-  color: #0064a4;
-  font-size: 1.5em;
-  padding: 0 5px;
-}
 #page-top section .floating-label-form-group input {
   font-size: 1.5em;
   outline: none;
 }
 #page-top section .submit-button {
+  padding: 20px;
   text-align: center;
+}
+div#waitTimeModal {
+  top: 10%;
+  left: 10%;
+  width: 75%;
+}
+div#waitTimeModal .modal-body {
+  width: 80%;
+  text-align: center;
+}
+div#waitTimeModal .ticket-primary {
+  max-width: 100%;
 }
